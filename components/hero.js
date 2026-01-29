@@ -8,7 +8,7 @@ export default function HeroSection(){
           style={{ opacity: 0.5 }}
         >
           <Image
-            src="/hero-image.jpeg"
+            src="/DSCF3643.JPG"
             className="rounded-lg"
             quality={100}
             fill
@@ -23,8 +23,8 @@ export default function HeroSection(){
         <div class="z-10 text-center px-8 drop-shadow-lg shadow-black">
           <div class="uppercase text-sm mb-4">Welcome to</div>
           <div class="text-4xl font-mplus font-medium">
-            Weekend Coder&apos;s
-            <span className="text-yellow-500"> Chronicles</span>
+            HoafngAnh&apos;s
+            <span className="text-yellow-500"> Blog</span>
           </div>
         </div>
       </section>
