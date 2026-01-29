@@ -21,10 +21,10 @@ export default function HeroSection(){
           />
         </div>
         <div class="z-10 text-center px-8 drop-shadow-lg shadow-black">
-          <div class="uppercase text-sm mb-4">Welcome to</div>
-          <div class="text-4xl font-mplus font-medium">
+          <div class="uppercase text-sm mb-4 text-black">Welcome to</div>
+          <div class="text-4xl font-mplus font-medium text-black">
             HoafngAnh&apos;s
-            <span className="text-yellow-500"> Blog</span>
+            <span className="text-cyan-500"> Blog</span>
           </div>
         </div>
       </section>
