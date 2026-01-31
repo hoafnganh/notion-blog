@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build",
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.15",
@@ -27,6 +29,7 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.2.2",
+    "gh-pages": "^6.3.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1"
   }

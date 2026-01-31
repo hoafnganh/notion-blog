@@ -12,8 +12,8 @@ export default function CategoryFilter({ categories, selectedCategory, onSelectC
           onClick={() => onSelectCategory('All')}
           className={`px-4 py-2 rounded-lg font-medium transition-all duration-300
                      ${selectedCategory === 'All'
-                       ? 'bg-yellow-400 dark:bg-purple-500 text-white shadow-lg scale-105'
-                       : 'bg-white dark:bg-[#242424] text-stone-700 dark:text-gray-300 border-2 border-yellow-200 dark:border-purple-500/50 hover:border-yellow-400 dark:hover:border-purple-400'
+                       ? 'bg-yellow-400 dark:bg-indigo-800 text-white shadow-lg scale-105'
+                       : 'bg-white dark:bg-[#242424] text-stone-700 dark:text-gray-300 border-2 border-yellow-200 dark:border-indigo-800/50 hover:border-yellow-400 dark:hover:border-purple-400'
                      }`}
         >
           All ({categories.All || 0})
@@ -28,8 +28,8 @@ export default function CategoryFilter({ categories, selectedCategory, onSelectC
               onClick={() => onSelectCategory(category)}
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-300
                          ${selectedCategory === category
-                           ? 'bg-yellow-400 dark:bg-purple-500 text-white shadow-lg scale-105'
-                           : 'bg-white dark:bg-[#242424] text-stone-700 dark:text-gray-300 border-2 border-yellow-200 dark:border-purple-500/50 hover:border-yellow-400 dark:hover:border-purple-400'
+                           ? 'bg-yellow-400 dark:bg-indigo-800 text-white shadow-lg scale-105'
+                           : 'bg-white dark:bg-[#242424] text-stone-700 dark:text-gray-300 border-2 border-yellow-200 dark:border-indigo-800/50 hover:border-yellow-400 dark:hover:border-purple-400'
                          }`}
             >
               {category} ({count})

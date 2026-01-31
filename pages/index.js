@@ -42,7 +42,7 @@ export async function getStaticProps(){
     props: {
       posts: posts,
     },
-    revalidate: 60, // Revalidate mỗi 60 giây
+    revalidate: 60,
   };
 }
 
@@ -53,8 +53,10 @@ export default function Home({posts}){
   const categoryCounts = useMemo(() => {
     const counts = { All: posts?.length || 0 }
     posts?.forEach(post => {
-      const category = post.category || 'Uncategorized'
-      counts[category] = (counts[category] || 0) + 1
+      // Mỗi post có thể có nhiều categories
+      post.categories?.forEach(category => {
+        counts[category] = (counts[category] || 0) + 1
+      })
     })
     return counts
   }, [posts])
@@ -62,7 +64,8 @@ export default function Home({posts}){
   // Lọc bài viết theo category
   const filteredPosts = useMemo(() => {
     if (selectedCategory === 'All') return posts
-    return posts?.filter(post => post.category === selectedCategory)
+    // Lọc các posts mà có chứa category được chọn trong mảng categories
+    return posts?.filter(post => post.categories?.includes(selectedCategory))
   }, [posts, selectedCategory])
 
   return (
@@ -104,7 +107,7 @@ export default function Home({posts}){
             
             {/* Hiển thị số bài viết đang xem */}
             <div className="mb-4 text-stone-600 dark:text-gray-400">
-              Showing <span className="font-semibold text-yellow-500 dark:text-purple-400">
+              Showing <span className="font-semibold text-yellow-500 dark:text-indigo-800">
                 {filteredPosts?.length}
               </span> post{filteredPosts?.length !== 1 ? 's' : ''}
               {selectedCategory !== 'All' && (
@@ -126,19 +129,22 @@ export default function Home({posts}){
                           src={post?.heroImage}
                           alt={post?.slug || post?.title}
                           className="rounded-xl w-full h-auto object-cover aspect-video
-                                   border-2 border-yellow-200 dark:border-purple-500/50
+                                   border-2 border-yellow-200 dark:border-indigo-950
                                    group-hover:border-yellow-400 dark:group-hover:border-purple-400
                                    group-hover:scale-105
                                    transition-all duration-300"
                         />
                         
-                        
-                        <span className="absolute top-2 right-2 
-                                       px-3 py-1 rounded-full text-xs font-semibold
-                                       bg-yellow-400 dark:bg-purple-500 
+                        {/* Hiển thị tất cả categories của post */}
+                        <div className="absolute top-2 right-2 flex flex-wrap gap-1 justify-end max-w-[80%]">
+                          {post.categories?.map((cat, idx) => (
+                            <span key={idx} className="px-2 py-1 rounded-full text-xs font-semibold
+                                       bg-yellow-400 dark:bg-indigo-950 
                                        text-white shadow-lg">
-                          {post.category}
-                        </span>
+                              {cat}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                       <h2 className="text-center text-base md:text-lg font-semibold 
                                     text-stone-700 dark:text-gray-200

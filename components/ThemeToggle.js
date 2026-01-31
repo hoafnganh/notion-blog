@@ -21,14 +21,14 @@ export default function ThemeToggle() {
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="p-2 rounded-lg border-2 
                  border-yellow-400 hover:bg-yellow-100
-                 dark:border-purple-500 dark:hover:bg-purple-500/10 
+                 dark:border-indigo-800 dark:hover:bg-indigo-800/10 
                  transition-all duration-300
                  flex items-center justify-center"
       aria-label="Toggle Dark Mode"
       title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
     >
       {theme === 'dark' ? (
-        <Sun className="h-5 w-5 text-purple-400" />
+        <Sun className="h-5 w-5 text-indigo-400" />
       ) : (
         <Moon className="h-5 w-5 text-yellow-600" />
       )}

@@ -30,7 +30,7 @@ export default function Navbar(){
           <h2 className="hover:cursor-pointer flex space-x-1 text-sm md:text-lg">
             <Link href="https://ctftime.org/team/400816" 
                   className="flex items-center 
-                           hover:text-yellow-500 dark:hover:text-purple-400 
+                           hover:text-yellow-500 dark:hover:text-indigo-400 
                            transition-colors"> 
               InfosecPTIT
             </Link>
