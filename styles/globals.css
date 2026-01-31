@@ -32,7 +32,7 @@ body {
   }
 }
 
-/* Styling for details/summary */
+/* Details/Summary styling */
 details {
   margin: 1rem 0;
 }
@@ -62,4 +62,49 @@ summary::before {
 
 details[open] summary::before {
   transform: rotate(90deg);
+}
+
+/* Custom scrollbar - unified for TOC */
+.toc-nav::-webkit-scrollbar,
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.toc-nav::-webkit-scrollbar-track,
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.toc-nav::-webkit-scrollbar-thumb,
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 10px;
+}
+
+.toc-nav::-webkit-scrollbar-thumb:hover,
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #eab308;
+}
+
+/* Dark mode scrollbar */
+.dark .toc-nav::-webkit-scrollbar-thumb,
+.dark .scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #a855f7;
+}
+
+.dark .toc-nav::-webkit-scrollbar-thumb:hover,
+.dark .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #9333ea;
+}
+
+/* Firefox scrollbar */
+.toc-nav,
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #facc15 transparent;
+}
+
+.dark .toc-nav,
+.dark .scrollbar-thin {
+  scrollbar-color: #a855f7 transparent;
 }

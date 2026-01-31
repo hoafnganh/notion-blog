@@ -8,6 +8,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        'xl': '1280px',
+      },
       fontFamily: {
         customfont: ["Quicksand", "sans-serif"],
       },
